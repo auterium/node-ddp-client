@@ -368,7 +368,7 @@ describe("SockJS", function() {
   });
 
   describe("after info hit", function() {
-    var request = require("request");
+    var request = require("http");
     it("should connect to the correct url", function(done) {
       var get = function(opts, callback) {
         assert.equal(opts.url, "http://the-host:9000/sockjs/info");
@@ -502,7 +502,7 @@ describe("SockJS", function() {
 });
 
 function WithRequestGet(getFn, fn) {
-  var request = require("request");
+  var request = require("http");
   var originalGet = request.get;
   request.get = getFn;
 
